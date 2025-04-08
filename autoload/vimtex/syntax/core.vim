@@ -690,6 +690,11 @@ function! vimtex#syntax#core#init_rules() abort " {{{1
         \ end="\%#=1^%%end novalidate\s*$"
         \ contains=@texClusterBasic
 
+  syntax region texSynDisableZone matchgroup=texComment
+        \ start="\%#=1^\c\s*% VimTeX: SynDisable\%( on\| enable\)\?\s*$"
+        \ end="\%#=1^\c\s*% VimTeX: SynDisable\%( off\| disable\).*"
+        \ contains=@NoSpell
+
   " }}}2
   " {{{2 Conceal mode support
 
